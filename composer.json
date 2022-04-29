@@ -1,0 +1,19 @@
+{
+    "name": "shopblocks-engineering/omnipay-square",
+    "description": "Aquare Pay driver for the Omnipay PHP payment processing library",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Max",
+            "email": "zax1984@shopblocks.com"
+        }
+    ],
+    "require": {
+        "php": "^7.1|^7.3|^8",
+        "omnipay/common": "~3.0"
+    },
+    "require-dev": {
+        "omnipay/tests": "^4.1"
+    }
+}
