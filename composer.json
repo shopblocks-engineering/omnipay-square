@@ -15,5 +15,15 @@
     },
     "require-dev": {
         "omnipay/tests": "^4.1"
+    },
+    "autoload": {
+        "psr-12": {
+            "Omnipay\\Square\\" : "src/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "4.0-dev"
+        }
     }
 }
