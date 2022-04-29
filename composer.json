@@ -1,7 +1,9 @@
 {
     "name": "shopblocks-engineering/omnipay-square",
-    "description": "Aquare Pay driver for the Omnipay PHP payment processing library",
+    "description": "Square Pay driver for the Omnipay PHP payment processing library",
     "type": "library",
+    "keywords": ["Square Checkout", "Omnipay", "Shopblocks", "Shopblocks Engineering"],
+    "homepage": "https://github.com/shopblocks-engineering/omnipay-square",
     "license": "MIT",
     "authors": [
         {
