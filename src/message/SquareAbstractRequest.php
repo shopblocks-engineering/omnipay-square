@@ -13,8 +13,8 @@ abstract class SquareAbstractRequest extends AbstractRequest implements Constant
     /**
      * @var string Endpoint base URLs.
      */
-    static string $liveEndpoint = 'https://lconnect.squareupsandbox.com';
-    static string $testEndpoint = 'https://connect.squareupsandbox.com';
+    static $liveEndpoint = 'https://lconnect.squareupsandbox.com';
+    static $testEndpoint = 'https://connect.squareupsandbox.com';
 
     /**
      * @param bool $test
@@ -32,7 +32,9 @@ abstract class SquareAbstractRequest extends AbstractRequest implements Constant
     {
         return [
             'Content-Type' => 'application/json',
-            'Authorization' => 'Basic ' . $this->getAccessToken(),
+            'Authorization' => 'Bearer ' . $this->getAccessToken(),
+            'Square-Version' => self::SQUARE_VERSION,
+
         ];
     }
 }

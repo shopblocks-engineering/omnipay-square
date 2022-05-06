@@ -13,13 +13,14 @@
     ],
     "require": {
         "php": "^7.1|^7.3|^8",
-        "omnipay/common": "~3.0"
+        "omnipay/common": "~3.0",
+        "ext-json": "*"
     },
     "require-dev": {
         "omnipay/tests": "^4.1"
     },
     "autoload": {
-        "psr-12": {
+        "psr-4": {
             "Omnipay\\Square\\" : "src/"
         }
     },

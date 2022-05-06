@@ -9,9 +9,8 @@ namespace Omnipay\Square;
 
 interface ConstantsInterface
 {
-    //
-    // First the request constants.
-    //
+
+    const SQUARE_VERSION = '2022-04-20';
 
     /**
      * Flag whether to allow the gift aid acceptance box to appear for this
