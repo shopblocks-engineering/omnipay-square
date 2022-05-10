@@ -22,6 +22,9 @@ abstract class AbstractGateway extends OmnipayAbstractGateway implements Constan
             'apply3DSecure' => null,
             'useAuthenticate' => null,
             'accountType' => null,
+            'application_id' => null,
+            'access_token' => null,
+            'location_id' => null
         ];
     }
 }
