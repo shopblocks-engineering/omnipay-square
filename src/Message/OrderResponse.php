@@ -3,11 +3,10 @@
 namespace Omnipay\Square\Message;
 
 use Omnipay\Common\Message\AbstractResponse;
-use Omnipay\Common\Message\RedirectResponseInterface;
 use Omnipay\Common\Message\RequestInterface;
 use Omnipay\Common\Message\ResponseInterface;
 
-class PurchaseResponse extends AbstractResponse implements ResponseInterface
+class OrderResponse extends AbstractResponse implements ResponseInterface
 {
     protected $request;
     protected $response;
@@ -51,14 +50,6 @@ class PurchaseResponse extends AbstractResponse implements ResponseInterface
     }
 
     /**
-     * @return bool
-     */
-    public function isRedirect(): bool
-    {
-        return false;
-    }
-
-    /**
      * @return string
      */
     public function getMessage(): string
@@ -66,22 +57,6 @@ class PurchaseResponse extends AbstractResponse implements ResponseInterface
         $message = $this->responseBody->errors[0] ?? '';
 
         return $message->detail;
-    }
-
-    /**
-     * @return string
-     */
-    public function getRedirectMethod(): string
-    {
-        return 'INSTANT';
-    }
-
-    /**
-     * @return string
-     */
-    public function getTransactionReference(): string
-    {
-        return $this->responseBody->payment->id ?? '';
     }
 
     /**

@@ -20,7 +20,8 @@ class AuthorizeRequest extends SquareAbstractRequest implements ConstantsInterfa
             'source_id' => $this->getSourceId(),
             'idempotency_key' => $this->getIdempotencyKey(),
             'autocomplete' => false,
-            'verification_token' => $this->getVerificationToken()
+            'verification_token' => $this->getVerificationToken(),
+            'order_id' => $this->createSquareOrderId()
         ];
     }
 

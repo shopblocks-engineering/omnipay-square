@@ -2,7 +2,6 @@
 
 namespace Omnipay\Square\Message;
 
-use Illuminate\Support\Facades\Log;
 use Omnipay\Square\ConstantsInterface;
 
 class PurchaseRequest extends SquareAbstractRequest implements ConstantsInterface
@@ -20,7 +19,9 @@ class PurchaseRequest extends SquareAbstractRequest implements ConstantsInterfac
             ],
             'source_id' => $this->getSourceId(),
             'idempotency_key' => $this->getIdempotencyKey(),
-            'autocomplete' => true
+            'autocomplete' => true,
+            'verification_token' => $this->getVerificationToken(),
+            'order_id' => $this->createSquareOrderId()
         ];
     }
 

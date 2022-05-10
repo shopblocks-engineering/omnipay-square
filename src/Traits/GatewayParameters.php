@@ -119,4 +119,72 @@ trait GatewayParameters
     {
         return $this->getParameter('verificationToken');
     }
+
+    /**
+     * @param string $value
+     * @return void
+     */
+    public function setOrderId(string $value)
+    {
+        $this->setParameter('order_id', $value);
+    }
+
+    /**
+     * @return string
+     */
+    public function getOrderId(): string
+    {
+        return $this->getParameter('order_id');
+    }
+
+    /**
+     * @param $value
+     * @return void
+     */
+    public function setLineItems($value)
+    {
+        $this->setParameter('line_items', $value);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLineItems()
+    {
+        return $this->getParameter('line_items');
+    }
+
+    /**
+     * @param string $value
+     * @return void
+     */
+    public function setCurrency($value)
+    {
+        $this->setParameter('currency', $value);
+    }
+
+    /**
+     * @return string
+     */
+    public function getCurrency(): string
+    {
+        return strtoupper($this->getParameter('currency'));
+    }
+
+    /**
+     * @param string $value
+     * @return void
+     */
+    public function setLocationId($value)
+    {
+        $this->setParameter('location_id', $value);
+    }
+
+    /**
+     * @return string
+     */
+    public function getLocationId(): string
+    {
+        return $this->getParameter('location_id');
+    }
 }
