@@ -63,9 +63,7 @@ class PurchaseResponse extends AbstractResponse implements ResponseInterface
      */
     public function getMessage(): string
     {
-        $message = $this->responseBody->errors[0] ?? '';
-
-        return $message->detail;
+        return json_encode($this->responseBody->errors);
     }
 
     /**
@@ -82,13 +80,5 @@ class PurchaseResponse extends AbstractResponse implements ResponseInterface
     public function getTransactionReference(): string
     {
         return $this->responseBody->payment->id ?? '';
-    }
-
-    /**
-     * @return string
-     */
-    public function getOrderId(): string
-    {
-        return $this->responseBody->order->id;
     }
 }

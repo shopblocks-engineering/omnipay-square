@@ -34,7 +34,6 @@ abstract class SquareAbstractRequest extends AbstractRequest implements Constant
             'Content-Type' => 'application/json',
             'Authorization' => 'Bearer ' . $this->getAccessToken(),
             'Square-Version' => self::SQUARE_VERSION,
-
         ];
     }
 
@@ -60,33 +59,5 @@ abstract class SquareAbstractRequest extends AbstractRequest implements Constant
         }
 
         return $parsedItems;
-    }
-
-    /**
-     * @return string
-     * @throws \JsonException
-     */
-    public function createSquareOrderId(): string
-    {
-        $orderResponse = $this->httpClient->request(
-            'POST',
-            $this->getBaseEndpoint($this->getTestMode()) . '/v2/orders',
-            $this->setHeaders(),
-            json_encode([
-                'idempotency_key' => $this->getIdempotencyKey(),
-                'order' => (object)array(
-                    'line_items' => $this->parseLineItems(),
-                    'location_id' => $this->getLocationId()
-                ),
-
-            ])
-        );
-
-        $response = new OrderResponse($this, $orderResponse);
-
-        if (!$response->isSuccessful()) {
-            throw new \JsonException(json_encode($response->getMessage()));
-        }
-        return $response->getOrderId();
     }
 }

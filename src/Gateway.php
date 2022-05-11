@@ -3,6 +3,7 @@
 namespace Omnipay\Square;
 
 use Omnipay\Square\Message\CompleteAuthorizeRequest;
+use Omnipay\Square\Message\CreateOrderRequest;
 use Omnipay\Square\Message\PurchaseRequest;
 use Omnipay\Square\Message\AuthorizeRequest;
 use Omnipay\Square\Traits\GatewayParameters;
@@ -22,6 +23,16 @@ class Gateway extends AbstractGateway implements ConstantsInterface
     {
         return $this->paymentProvider;
     }
+
+    /**
+     * @param array $options
+     * @return AbstractRequest
+     */
+    public function createOrder(array $options = [])
+    {
+        return $this->createRequest(CreateOrderRequest::class, $options);
+    }
+
 
     /**
      * @param array $options

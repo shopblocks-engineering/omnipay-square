@@ -121,6 +121,57 @@ trait GatewayParameters
     }
 
     /**
+     * @param $value
+     * @return void
+     */
+    public function setShipmentDetails($value)
+    {
+        $this->setParameter('shipment_details', $value);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getShipmentDetails()
+    {
+        return $this->getParameter('shipment_details');
+    }
+
+    /**
+     * @param $value
+     * @return void
+     */
+    public function setBillingDetails($value)
+    {
+        $this->setParameter('billing_details', $value);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getBillingDetails()
+    {
+        return $this->getParameter('billing_details');
+    }
+
+    /**
+     * @param $value
+     * @return void
+     */
+    public function setCustomerEmail($value)
+    {
+        $this->setParameter('buyer_email_address', $value);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCustomerEmail()
+    {
+        return $this->getParameter('buyer_email_address');
+    }
+
+    /**
      * @param string $value
      * @return void
      */
@@ -186,5 +237,39 @@ trait GatewayParameters
     public function getLocationId(): string
     {
         return $this->getParameter('location_id');
+    }
+
+    /**
+     * @param $value
+     * @return void
+     */
+    public function setSquareOrderId($value)
+    {
+        $this->setParameter('square_order_id', $value);
+    }
+
+    /**
+     * @return string
+     */
+    public function getSquareOrderId(): string
+    {
+        return $this->getParameter('square_order_id');
+    }
+
+    /**
+     * @param $value
+     * @return void
+     */
+    public function setSquarePaymentId($value)
+    {
+        $this->setParameter('square_payment_id', $value);
+    }
+
+    /**
+     * @return string
+     */
+    public function getSquarePaymentId(): string
+    {
+        return $this->getParameter('square_payment_id');
     }
 }

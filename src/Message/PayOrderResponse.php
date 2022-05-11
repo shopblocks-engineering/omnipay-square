@@ -3,11 +3,10 @@
 namespace Omnipay\Square\Message;
 
 use Omnipay\Common\Message\AbstractResponse;
-use Omnipay\Common\Message\RedirectResponseInterface;
 use Omnipay\Common\Message\RequestInterface;
 use Omnipay\Common\Message\ResponseInterface;
 
-class CompleteAuthorizeResponse extends AbstractResponse implements ResponseInterface
+class PayOrderResponse extends AbstractResponse implements ResponseInterface
 {
     protected $request;
     protected $response;
@@ -51,26 +50,10 @@ class CompleteAuthorizeResponse extends AbstractResponse implements ResponseInte
     }
 
     /**
-     * @return bool
-     */
-    public function isRedirect(): bool
-    {
-        return false;
-    }
-
-    /**
      * @return string
      */
     public function getMessage(): string
     {
         return json_encode($this->responseBody->errors);
-    }
-
-    /**
-     * @return string
-     */
-    public function getTransactionReference(): string
-    {
-        return $this->responseBody->payment->id ?? '';
     }
 }

@@ -8,6 +8,7 @@ class PurchaseRequest extends SquareAbstractRequest implements ConstantsInterfac
 {
     /**
      * @return array
+     * @throws \JsonException
      * @throws \Omnipay\Common\Exception\InvalidRequestException
      */
     public function getData()
@@ -21,7 +22,9 @@ class PurchaseRequest extends SquareAbstractRequest implements ConstantsInterfac
             'idempotency_key' => $this->getIdempotencyKey(),
             'autocomplete' => true,
             'verification_token' => $this->getVerificationToken(),
-            'order_id' => $this->createSquareOrderId()
+            'order_id' => $this->getSquareOrderId(),
+            'billing_address' => $this->getBillingDetails(),
+            'buyer_email_address' => $this->getCustomerEmail()
         ];
     }
 

@@ -54,6 +54,7 @@ class OrderResponse extends AbstractResponse implements ResponseInterface
      */
     public function getMessage(): string
     {
+        return json_encode($this->responseBody->errors);
         $message = $this->responseBody->errors[0] ?? '';
 
         return $message->detail;
